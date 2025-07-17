@@ -6,8 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "vercel-build": "vite build --mode production && echo '/* /index.html 200' > dist/_redirects",
-    "postinstall": "patch-package || true",
+    "vercel-build": "node node_modules/vite/bin/vite.js build --mode production",
     "preview:prod": "serve -s dist",
     "test:build": "npm run build && npm run preview:prod",
     "serve": "serve -s dist"
@@ -24,8 +23,7 @@
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5",
-    "patch-package": "^6.5.1"
+    "vite": "^4.5.14"
   },
   "engines": {
     "node": ">=16.0.0",

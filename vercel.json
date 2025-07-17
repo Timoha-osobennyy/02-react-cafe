@@ -6,16 +6,16 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist",
-        "installCommand": "npm install --legacy-peer-deps && npm install vite",
-        "buildCommand": "npm run vercel-build"
+        "installCommand": "npm install",
+        "buildCommand": "npm run vercel-build",
+        "routes": [
+          {
+            "src": "/(.*)",
+            "dest": "/index.html",
+            "status": 200
+          }
+        ]
       }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html",
-      "status": 200
     }
   ]
 }
