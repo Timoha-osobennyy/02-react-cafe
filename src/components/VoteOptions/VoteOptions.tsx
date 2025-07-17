@@ -25,7 +25,7 @@ export default function VoteOptions({
       </button>
       {canReset && (
         <button
-          className={\`\${styles.button} \${styles.reset}\`}
+        className={[styles.button, styles.reset].join(' ')}
           onClick={onReset}
         >
           Reset
