@@ -2,25 +2,24 @@
   "name": "02-react-cafe",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
+  "homepage": "https://timoha-osobennyy.github.io/02-react-cafe/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base=/02-react-cafe/",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages --dist dist --dotfiles --message \"Deploy to GitHub Pages\" --no-push",
-    "force-deploy": "git push origin --delete gh-pages && npm run deploy",
-    "clean-deploy": "git worktree remove --force gh-pages 2>null && npm run deploy",
-    "full-deploy": "npm run build && npm run clean-deploy",
-    "vercel-build": "node node_modules/vite/bin/vite.js build --mode production",
-    "preview:prod": "serve -s dist",
-    "test:build": "npm run build && npm run preview:prod",
-    "serve": "serve -s dist"
+    "deploy": "vite build --base=/02-react-cafe/ && node ./node_modules/gh-pages/bin/gh-pages.js -d dist",
+    "gh-deploy": "npm run build && npm run deploy",
+    "vercel-build": "vite build --mode production"
   },
   "dependencies": {
     "modern-normalize": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.14.2"
+    "react-router-dom": "^6.14.2",
+    "axios": "^1.9.0",
+    "izitoast": "^1.4.0",
+    "simplelightbox": "^2.14.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -28,9 +27,10 @@
     "@vitejs/plugin-react": "^4.0.3",
     "gh-pages": "^6.3.0",
     "typescript": "^5.0.2",
-    "vite": "^4.5.14"
+    "vite": "^5.4.6",
+    "vite-plugin-full-reload": "^1.2.0",
+    "vite-plugin-html-inject": "^1.1.2"
   },
-  "homepage": "https://timoha-osobennyy.github.io/02-react-cafe/",
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
