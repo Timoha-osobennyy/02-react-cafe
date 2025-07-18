@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "deploy": "vite build --base=/02-react-cafe/ && node ./node_modules/gh-pages/bin/gh-pages.js -d dist",
     "gh-deploy": "npm run build && npm run deploy",
-    "vercel-build": "vite build --mode production"
+    "vercel-build": "npx vite build --mode production"
   },
   "dependencies": {
     "modern-normalize": "^3.0.1",
@@ -19,7 +19,8 @@
     "react-router-dom": "^6.14.2",
     "axios": "^1.9.0",
     "izitoast": "^1.4.0",
-    "simplelightbox": "^2.14.3"
+    "simplelightbox": "^2.14.3",
+    "vite": "^5.4.6"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -27,7 +28,6 @@
     "@vitejs/plugin-react": "^4.0.3",
     "gh-pages": "^6.3.0",
     "typescript": "^5.0.2",
-    "vite": "^5.4.6",
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-html-inject": "^1.1.2"
   },
